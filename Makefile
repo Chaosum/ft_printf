@@ -12,26 +12,24 @@ CC			= gcc
 
 CFLAGS		= -Wall -Wextra -Werror
 
-all:		${NAME}
+all:		MAKELIBFT ${NAME}
 
-%.o:		%.c
+%.o:		%.c ft_printf.h
 			${CC} ${CFLAGS} -o $@ -c $<
 
-${NAME}:	${OBJS} MAKELIBFT
+${NAME}:	${OBJS} 
 			ar rcs ${NAME} ${OBJS} ./libft/*.o
 
-${OBJS}:	ft_printf.h
-
-MAKELIBFT:	${OBJS}
-		make -C ./libft		
+MAKELIBFT:
+			${MAKE} -C ./libft		
 
 clean:
-		rm -f *.o ./*/*.o
-		make clean -C ./libft
+			rm -f *.o ./*/*.o
+			${MAKE} clean -C ./libft
 
 fclean:		clean
 			rm -f ${NAME}
-			make fclean -C ./libft
+			${MAKE} fclean -C ./libft
 
 re:			fclean all
 

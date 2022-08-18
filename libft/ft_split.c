@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservage <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: matthieu <matthieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:39:18 by mservage          #+#    #+#             */
-/*   Updated: 2020/12/04 17:04:36 by mservage         ###   ########lyon.fr   */
+/*   Updated: 2022/08/18 16:07:23 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 static int		ft_free_malloc(char **src)
 {
 	int j;
-	int k;
 
 	j = 0;
-	k = 0;
 	while (src[j])
 	{
 		free(src[j]);
